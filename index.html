@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#120e20" />
+  <meta name="description" content="Une surprise d'anniversaire créée spécialement pour Apah. Ouvre le cadeau ! 🍒" />
+  <meta property="og:title" content="Joyeux anniversaire Apah 🎂" />
+  <meta property="og:description" content="Une surprise spéciale t'attend ! ✨" />
+  <title>APAH — Your Birthday Universe 🍒</title>
+  <link rel="icon" href="assets/apah-avatar.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <div class="ambient ambient-a" aria-hidden="true"></div>
+  <div class="ambient ambient-b" aria-hidden="true"></div>
+  <div class="ambient ambient-c" aria-hidden="true"></div>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div id="floaties" aria-hidden="true"></div>
+
+  <!-- A real click starts the music: browsers block unrequested autoplay. -->
+  <div class="intro" id="intro">
+    <div class="intro-orbit intro-orbit-one" aria-hidden="true"></div>
+    <div class="intro-orbit intro-orbit-two" aria-hidden="true"></div>
+    <span class="intro-cherry cherry-left" aria-hidden="true">🍒</span>
+    <span class="intro-cherry cherry-right" aria-hidden="true">✨</span>
+    <div class="intro-inner">
+      <div class="intro-topline"><span class="live-dot"></span> TRANSMISSION SPÉCIALE ENTRANTE</div>
+      <div class="intro-avatar-wrap">
+        <img class="intro-avatar" src="assets/apah-avatar.png" alt="Photo de profil d'Apah" />
+        <span class="intro-avatar-star" aria-hidden="true">✦</span>
+      </div>
+      <p class="intro-overline">Pour une personne très spéciale</p>
+      <h1 class="intro-title">HEY, <em>APAH!</em><span aria-hidden="true"> ✳</span></h1>
+      <p class="intro-sub">Quelqu'un t'a préparé quelque chose de fou pour ton anniversaire...</p>
+      <button id="startBtn" class="start-btn" type="button">
+        <span class="start-btn-shine" aria-hidden="true"></span>
+        <span>OUVRIR LA SURPRISE</span>
+        <span class="start-arrow" aria-hidden="true">↗</span>
+      </button>
+      <p class="intro-audio-hint">♪ Mets le son pour profiter de l'expérience</p>
+    </div>
+    <div class="intro-foot"><span>MADE WITH ♡</span><span>EXCLUSIVEMENT POUR @aa6a49</span></div>
+  </div>
+
+  <div id="site" class="site" inert>
+    <header class="nav" id="top">
+      <a class="nav-brand" href="#top" aria-label="Retour en haut">A<span>✳</span>PAH<span class="brand-dot">.</span></a>
+      <div class="nav-center"><span class="live-dot"></span><span>YOUR SPECIAL DAY</span></div>
+      <button id="navGiftBtn" type="button" class="nav-pill">A LITTLE GIFT <span aria-hidden="true">↗</span></button>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="hero-gridlines" aria-hidden="true"></div>
+        <div class="hero-float hero-float-spark" aria-hidden="true">✴</div>
+        <div class="hero-float hero-float-flower" aria-hidden="true">✿</div>
+        <div class="hero-float hero-float-cherry" aria-hidden="true">🍒</div>
+        <div class="hero-content">
+          <div class="hero-pill reveal"><span>01</span><span class="pill-separator"></span><span>THIS IS YOUR MOMENT</span><span>✧</span></div>
+          <p class="hero-pre reveal">TO THE ONE AND ONLY</p>
+          <h2 id="heroTitle" class="hero-title">
+            <span class="title-line title-happy reveal">HAPPY<span class="title-daisy" aria-hidden="true">✳</span></span>
+            <span class="title-line title-birthday reveal">BIRTHDAY<span class="title-sparkle" aria-hidden="true">✦</span></span>
+            <span class="title-line title-apah reveal">APAH<span class="period">!</span></span>
+          </h2>
+          <p class="hero-desc reveal">Aujourd'hui, le monde est un peu plus <b>magique</b>... parce que c'est <b>TON</b> jour. ✨</p>
+          <div class="hero-actions reveal">
+            <button type="button" class="primary-btn" id="heroGiftBtn"><span>Découvre ton cadeau</span><span aria-hidden="true">↗</span></button>
+            <button type="button" class="outline-btn" id="heroCelebrateBtn"><span aria-hidden="true">✦</span> MAKE IT RAIN</button>
+          </div>
+          <div class="hero-caption reveal"><span class="caption-line"></span><span>Scroll pour découvrir la suite</span><span class="down-arrow" aria-hidden="true">↓</span></div>
+        </div>
+        <div class="hero-art reveal" aria-hidden="false">
+          <div class="art-halo art-halo-a" aria-hidden="true"></div>
+          <div class="art-halo art-halo-b" aria-hidden="true"></div>
+          <div class="art-sticker art-star-1" aria-hidden="true">✻</div>
+          <div class="art-sticker art-star-2" aria-hidden="true">✦</div>
+          <div class="art-sticker art-cherry" aria-hidden="true">🍒</div>
+          <div class="polaroid">
+            <div class="polaroid-img">
+              <img src="assets/apah-avatar.png" alt="Avatar Discord d'Apah" />
+              <span class="polaroid-glare" aria-hidden="true"></span>
+            </div>
+            <div class="polaroid-bottom"><span>THE BIRTHDAY STAR</span><span>♡</span></div>
+          </div>
+          <div class="art-ticket"><span class="ticket-emoji" aria-hidden="true">🎟</span><span>VIP PASS<br /><strong>APAH ONLY</strong></span></div>
+          <div class="art-label"><span class="label-star">✳</span><span>100% ICONIC<br /><strong>1000% LOVED</strong></span></div>
+        </div>
+        <div class="hero-index">001 / THE BIG DAY</div>
+      </section>
+
+      <div class="marquee" aria-hidden="true"><div class="marquee-track">
+        <span>JOYEUX ANNIVERSAIRE</span><i>✳</i><span>HAPPY BIRTHDAY APAH</span><i>✿</i><span>MAKE A WISH</span><i>🍒</i><span>JOYEUX ANNIVERSAIRE</span><i>✳</i><span>HAPPY BIRTHDAY APAH</span><i>✿</i><span>MAKE A WISH</span><i>🍒</i>
+      </div></div>
+
+      <section class="party-section" aria-labelledby="partyTitle">
+        <div class="section-eyebrow reveal"><span class="eyebrow-index">02 /</span><span>THE CELEBRATION</span></div>
+        <div class="party-heading reveal"><h2 id="partyTitle">THIS PARTY<br />IS <em>YOURS.</em></h2><p>Parce qu'une journée comme aujourd'hui mérite d'être célébrée à fond. 🎉</p></div>
+        <div class="party-grid">
+          <div class="party-card cake-card reveal">
+            <div class="card-label">01 — MAKE A WISH</div>
+            <div class="cake-scene" id="cakeScene">
+              <div class="cake-rays" aria-hidden="true"></div>
+              <div class="cake-wrap" aria-hidden="true">
+                <div class="candle candle-left"><span class="flame"></span><span class="wick"></span></div>
+                <div class="candle candle-center"><span class="flame"></span><span class="wick"></span></div>
+                <div class="candle candle-right"><span class="flame"></span><span class="wick"></span></div>
+                <div class="cake-tier cake-tier-top"><div class="icing icing-top"></div><span class="cake-dot dot-1"></span><span class="cake-dot dot-2"></span></div>
+                <div class="cake-tier cake-tier-bottom"><div class="icing icing-bottom"></div><span class="cake-dot dot-3"></span><span class="cake-dot dot-4"></span><span class="cake-dot dot-5"></span></div>
+                <div class="cake-plate"></div>
+              </div>
+              <span class="cake-mini-spark spark-a" aria-hidden="true">✦</span><span class="cake-mini-spark spark-b" aria-hidden="true">✳</span>
+            </div>
+            <h3>Make a wish, Apah.</h3>
+            <p id="wishDesc">Chaque anniversaire mérite un vœu. Clique et souffle les bougies !</p>
+            <button id="wishBtn" class="card-cta" type="button">SOUFFLER LES BOUGIES <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="party-card gift-card reveal">
+            <div class="card-label">02 — SOMETHING FOR YOU</div>
+            <div class="gift-scene" aria-hidden="true">
+              <span class="gift-emoji-deco deco-a">✦</span><span class="gift-emoji-deco deco-b">✿</span>
+              <div class="gift-3d" id="giftGraphic"><div class="gift-lid"><span class="gift-bow">✿</span></div><div class="gift-box"><span class="gift-ribbon"></span></div><div class="gift-shadow"></div></div>
+            </div>
+            <h3>Surprise inside.</h3>
+            <p>J'ai gardé un petit message spécialement pour toi. T'es prêt ?</p>
+            <button id="giftBtn" class="card-cta" type="button">OUVRIR TON CADEAU <span aria-hidden="true">↗</span></button>
+          </div>
+          <div class="party-card vibes-card reveal">
+            <div class="card-label">03 — GOOD VIBES ONLY</div>
+            <div class="vibes-sticker" aria-hidden="true"><span>GOOD</span><span>VIBES</span><b>✿</b></div>
+            <div class="vibes-text"><h3>More life. More smiles.</h3><p>Des bons moments, des belles surprises, et que du bonheur pour la suite !</p></div>
+            <button class="vibes-burst" type="button" id="vibesBtn">ENVOYER DES GOOD VIBES <span aria-hidden="true">✦</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="finale-section" aria-labelledby="finaleTitle">
+        <div class="finale-glow" aria-hidden="true"></div>
+        <div class="finale-ornament finale-ornament-left" aria-hidden="true">✳</div><div class="finale-ornament finale-ornament-right" aria-hidden="true">🍒</div>
+        <div class="finale-copy reveal"><span class="finale-topline">ONE MORE TIME, LOUDER...</span><h2 id="finaleTitle">JOYEUX<br /><i>ANNIVERSAIRE</i><br /><span>APAH !</span></h2><p>Cette journée t'appartient. Profite de chaque seconde. ♡</p><button type="button" class="finale-btn" id="againBtn">ENCORE DES CONFETTIS <span aria-hidden="true">✳</span></button></div>
+      </section>
+    </main>
+
+    <footer class="footer"><div class="footer-logo">APAH<span>✳</span></div><div>MADE WITH <span class="footer-heart">♥</span> FOR @aa6a49</div><button type="button" id="toTopBtn" aria-label="Retour en haut">BACK TO TOP ↑</button></footer>
+
+    <div class="music-player" id="musicPlayer" aria-label="Lecteur de musique">
+      <div class="music-art" aria-hidden="true">♫</div>
+      <div class="music-info"><strong>Joyeux anniversaire</strong><span>Birthday soundtrack · For Apah</span><div class="music-progress"><span id="musicProgress"></span></div></div>
+      <div class="equalizer" id="equalizer" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+      <button class="music-toggle" type="button" id="musicToggle" aria-label="Mettre la musique en pause" title="Lecture / Pause">Ⅱ</button>
+    </div>
+  </div>
+
+  <dialog class="gift-modal" id="giftModal" aria-labelledby="giftTitle">
+    <button class="modal-close" id="closeGiftBtn" aria-label="Fermer le message" type="button">✕</button>
+    <div class="modal-stars" aria-hidden="true">✦ &nbsp; ✳ &nbsp; ✦</div>
+    <div class="modal-avatar"><img src="assets/apah-avatar.png" alt="Avatar d'Apah" /></div>
+    <span class="modal-for">A LITTLE LETTER FOR YOU</span>
+    <h2 id="giftTitle">Cher <em>Apah,</em> 🍒</h2>
+    <p>Joyeux anniversaire ! 🎂</p>
+    <p>Je te souhaite une année pleine de bonheur, de réussite, de surprises incroyables et de moments qui te feront sourire.</p>
+    <p>Profite à fond de ta journée, reste comme tu es et n'oublie jamais que les meilleurs moments sont encore à venir. ✨</p>
+    <p class="modal-sign">Avec plein de good vibes,<br /><strong>Ton pote ♡</strong></p>
+    <button id="modalCelebrateBtn" class="modal-celebrate" type="button">LET'S CELEBRATE 🎉</button>
+  </dialog>
+
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+  <audio id="birthdayAudio" preload="metadata" src="assets/joyeux-anniversaire.mp3" loop></audio>
+</body>
+</html>
